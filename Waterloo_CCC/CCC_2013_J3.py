@@ -22,13 +22,13 @@ return False if x does not have distinct digits
 isDistinct(1987) --> True
 isDistinct(999) --> False
 '''
-def isDistinct(x):
+def nextdistinct(y):
 
 	nums = [] #store each digit from x
 
-	while (x != 0):
-		nums.append(x%10) #Takes the units digit of x and appends it to nums
-		x = x // 10
+	while (y != 0):
+		nums.append(y%10) #Takes the units digit of x and appends it to nums
+		y = y // 10
 
 	#Sort nums
 	nums.sort()
@@ -42,12 +42,12 @@ def isDistinct(x):
 num = int(input())
 num = num + 1 #I am looking for the next distinct digit
 
-distinct = isDistinct(num)
+distinct = nextdistinct(num)
 
 #loop until we find a distinct number
 while(distinct == False):
 	num = num + 1
-	distinct = isDistinct(num)
+	distinct = nextdistinct(num)
 
 print(num)
 
